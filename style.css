@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-
+/* ── Reset ── */
 * {
   margin: 0;
   padding: 0;
@@ -11,46 +10,86 @@ html {
 }
 
 body {
-  font-family: 'Inter', Arial, sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 16px;
   line-height: 1.8;
   color: #1a1a2e;
-  background: #ffffff;
-  padding-top: 80px; /* Push content below fixed nav */
+  background-color: #ffffff;
 }
 
 /* ── Navigation ── */
 nav {
-  background: rgba(10, 10, 30, 0.95);
-  backdrop-filter: blur(10px);
-  padding: 16px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background-color: #0f0f23;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 8px;
-  position: fixed; /* Changed from sticky to fixed */
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  z-index: 1000;
-  border-bottom: 1px solid rgba(99, 179, 237, 0.2);
+  gap: 4px;
+  padding: 14px 20px;
+  border-bottom: 2px solid #3b82f6;
 }
 
 nav a {
-  color: #cbd5e1;
+  color: #e2e8f0;
   text-decoration: none;
-  font-size: 0.95rem;
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  padding: 8px 14px;
-  border-radius: 20px;
-  transition: all 0.25s ease;
-  white-space: nowrap;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 25px;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 nav a:hover {
-  background: rgba(99, 179, 237, 0.15);
-  color: #63b3ed;
+  background-color: #3b82f6;
+  color: #ffffff;
+}
+
+/* ── Sections ── */
+section {
+  min-height: 100vh;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 90px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+/* ── Home Section ── */
+#home {
+  min-height: 100vh;
+  max-width: 100%;
+  background: linear-gradient(160deg, #0f0f23 0%, #1e3a5f 60%, #0f2340 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 60px 30px;
+}
+
+#home h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 16px;
+  border: none;
+}
+
+#home h1::after {
+  display: none;
+}
+
+#home p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  color: #93c5fd;
+  margin-bottom: 8px;
 }
 
 /* ── Profile Photo ── */
@@ -59,46 +98,226 @@ nav a:hover {
   height: 180px;
   border-radius: 50%;
   object-fit: cover;
-  border: 4px solid #63b3ed;
-  box-shadow: 0 0 30px rgba(99, 179, 237, 0.35);
-  margin-bottom: 28px;
+  border: 5px solid #3b82f6;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.3);
+  margin-bottom: 30px;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
 }
 
-/* ── Hero Section (Home) ── */
-#home {
-  min-height: 100vh;
-  background: linear-gradient(135deg, #0a0a1e 0%, #1a1a4e 50%, #0d2137 100%);
+/* ── Section Headings ── */
+section h2 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #0f0f23;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 4px solid #3b82f6;
+  display: inline-block;
+}
+
+section h3 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #1e3a5f;
+  background-color: #eff6ff;
+  border-left: 5px solid #3b82f6;
+  padding: 10px 16px;
+  border-radius: 0 6px 6px 0;
+  margin-top: 24px;
+  margin-bottom: 10px;
+}
+
+section p {
+  font-size: 16px;
+  color: #374151;
+  margin-bottom: 14px;
+}
+
+section ul {
+  margin-left: 24px;
+  margin-bottom: 14px;
+}
+
+section ul li {
+  font-size: 16px;
+  color: #374151;
+  margin-bottom: 8px;
+}
+
+/* ── Project Cards ── */
+.project-card {
+  background-color: #f8fafc;
+  border: 1px solid #dbeafe;
+  border-left: 5px solid #3b82f6;
+  border-radius: 8px;
+  padding: 18px 20px;
+  margin-top: 16px;
+}
+
+.project-card h3 {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0 0 8px 0;
+  font-size: 17px;
+  color: #1e3a5f;
+}
+
+.project-card p {
+  margin: 0;
+  font-size: 15px;
+  color: #4b5563;
+}
+
+/* ── Certificate ── */
+.cert-image {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+  border: 3px solid #3b82f6;
+  box-shadow: 0 6px 24px rgba(59, 130, 246, 0.2);
+  margin-top: 24px;
+  display: block;
+}
+
+.cert-btn {
+  display: inline-block;
+  margin-top: 20px;
+  background-color: #1e3a5f;
+  color: #ffffff;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 14px 32px;
+  border-radius: 8px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.cert-btn:hover {
+  background-color: #3b82f6;
+  transform: translateY(-2px);
+}
+
+/* ── Contact Form ── */
+form {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 60px 40px;
-  position: relative;
-  overflow: hidden;
-  margin-top: -80px; /* Offset body padding for full-screen hero */
-  padding-top: 140px; /* 60px + 80px to clear nav */
+  max-width: 500px;
+  margin-top: 20px;
 }
 
-#home::before {
-  content: '';
-  position: absolute;
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(99,179,237,0.12) 0%, transparent 70%);
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-}
-
-#home h1 {
-  font-size: 3.2rem;
+form label {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
   font-weight: 700;
+  color: #1e3a5f;
+  margin-top: 16px;
+  margin-bottom: 6px;
+}
+
+form input,
+form textarea {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  color: #1a1a2e;
+  background-color: #f8fafc;
+  border: 2px solid #dbeafe;
+  border-radius: 6px;
+  padding: 12px 14px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+form input:focus,
+form textarea:focus {
+  border-color: #3b82f6;
+  background-color: #ffffff;
+}
+
+form textarea {
+  resize: vertical;
+  min-height: 130px;
+}
+
+form button {
+  margin-top: 20px;
+  background-color: #1e3a5f;
   color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
   border: none;
-  margin-bottom: 20px;
-  line-height: 
+  border-radius: 8px;
+  padding: 14px 30px;
+  cursor: pointer;
+  align-self: flex-start;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+form button:hover {
+  background-color: #3b82f6;
+  transform: translateY(-2px);
+}
+
+/* ── Footer ── */
+footer {
+  background-color: #0f0f23;
+  color: #94a3b8;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  padding: 24px 20px;
+}
+
+/* ── Fade-in Animation ── */
+.fade {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #3b82f6;
+  border-radius: 3px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  #home h1 {
+    font-size: 32px;
+  }
+
+  #home p {
+    font-size: 15px;
+  }
+
+  nav a {
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+
+  section {
+    padding: 70px 20px;
+  }
+
+  section h2 {
+    font-size: 26px;
+  }
+}
