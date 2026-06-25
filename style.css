@@ -284,9 +284,9 @@ footer {
   transform: translateY(0);
 }
 
-/* ── Scrollbar ── */
+/* ── Modern Scrollbar ── */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 12px;
 }
 
 ::-webkit-scrollbar-track {
@@ -294,8 +294,21 @@ footer {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #3b82f6;
-  border-radius: 3px;
+  background: linear-gradient(180deg, #3b82f6 0%, #1e3a5f 100%);
+  border-radius: 10px;
+  border: 2px solid #f1f5f9;
+  transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #1e3a5f 0%, #0f0f23 100%);
+  box-shadow: 0 0 6px rgba(59, 130, 246, 0.4);
+}
+
+/* Firefox Scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #3b82f6 #f1f5f9;
 }
 
 /* ── Responsive ── */
@@ -319,5 +332,9 @@ footer {
 
   section h2 {
     font-size: 26px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
   }
 }
